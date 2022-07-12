@@ -1,0 +1,40 @@
+La commande SHOW TABLES montre que la base de données wild_db_quest existe et contient les deux tables wizard et school
+mysql> SHOW TABLES
+    -> ;
++-------------------------+
+| Tables_in_wild_db_quest |
++-------------------------+
+| school                  |
+| wizard                  |
++-------------------------+
+2 rows in set (0.01 sec)
+
+____________________________________________________________________________________________________________________________
+
+La table wizard est correctement importée. Elle contient bien un nouveau champ is_muggle de type BOOL ou TINYINT(1) et NOT NULL.
+mysql> DESCRIBE wizard;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| firstname   | varchar(100) | NO   |     | NULL    |                |
+| lastname    | varchar(100) | NO   |     | NULL    |                |
+| birthday    | date         | NO   |     | NULL    |                |
+| birth_place | varchar(255) | YES  |     | NULL    |                |
+| biography   | text         | YES  |     | NULL    |                |
+| is_muggle   | tinyint(1)   | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+_______________________________________________________________________________________________________________________________
+
+La table school existe et contient les champs id, name, capacity et country, respectivement de type INT, VARCHAR(100), INT et VARCHAR(255).
+mysql> DESCRIBE school;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(100) | NO   |     | NULL    |                |
+| capacity | int          | YES  |     | NULL    |                |
+| country  | varchar(255) | NO   |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
